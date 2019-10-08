@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" th:href="@{/lib/layui/css/layui.css}" href="../static/lib/layui/css/layui.css">
+    <link th:href="@{/lib/bootstrap/css/bootstrap.css}" href="../static/lib/bootstrap/css/bootstrap.css"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/welcome.css}" href="../static/css/welcome.css">
+
+</head>
+<body>
+<!--主体-->
+<div id="main" class="layui-main">
+    <section>
+        <div id="main_left">
+            <ul>
+                <li><img th:src="@{/images/shoujiqukuan.png}" src="../static/images/shoujiqukuan.png"></li>
+                <li><img th:src="@{/images/wukajiaoyi.png}" src="../static/images/wukajiaoyi.png"></li>
+                <li><img th:src="@{/images/qitayiwu.png}" src="../static/images/qitayiwu.png"></li>
+            </ul>
+        </div>
+        <div id="main_right">
+            <div id="right_top">
+                <img th:src="@{/images/kacao.png}" src="../static/images/kacao.png">
+            </div>
+            <div id="right_main">
+                <div id="right_1">
+                    <p style="font-size: 50px;color: white;margin-left: 20px;">请插入
+                        <br/>您的卡片</p>
+                    <span style="font-size: 30px;color: white;margin-left: 20px">Insert your card</span>
+                </div>
+                <div id="right_2">
+                    <a th:href="@{~/getAccount}">
+                        <img id="oimg" th:src="@{/images/card.png}" src="../static/images/card.png">
+                    </a>
+                </div>
+            </div>
+            <div id="right_footer">
+                <img width="14%" th:src="@{/images/01.jpg}" src="../static/images/01.jpg">
+                <img width="14%" th:src="@{/images/未标题-2_03.png}" src="../static/images/未标题-2_03.png">
+                <img width="14%" th:src="@{/images/未标题-2_05.png}" src="../static/images/未标题-2_05.png">
+                <img width="14%" th:src="@{/images/未标题-2_07.png}" src="../static/images/未标题-2_07.png">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <span class="glyphicon glyphicon-time" style="font-size: 40px;color: white;" aria-hidden="true"><span
+                style="margin-left:10px;font-size: 20px;color: white" id="cg"> </span></span>
+    </footer>
+</div>
+
+<script src="../static/lib/jquery/jquery.min.js" th:src="@{/lib/jquery/jquery.min.js}"></script>
+<script th:src="@{/lib/layui/layui.js}"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.js}"></script>
+<script>
+    window.onload=function() {
+        setInterval("cg.innerHTML=new Date().toLocaleString()", 10);
+    }
+</script>
+</body>
+</html>

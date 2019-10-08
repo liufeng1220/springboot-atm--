@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>取钱</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/lib/layui/css/layui.css" th:href="@{/lib/layui/css/layui.css}">
+    <link href="../static/lib/bootstrap/css/bootstrap.css" th:href="@{/lib/bootstrap/css/bootstrap.css}"
+          rel="stylesheet">
+    <style>
+        #main {
+            background-size: cover;
+            margin-top: 5px;
+            background: url(../static/images/timg.jpg);
+            background-size: cover;
+            border-radius: 10px;
+            /*  border-radius: 15px;*/
+            height: 750px;
+            overflow: hidden;
+            border: 1px solid grey;
+            box-shadow: 5px 5px 5px gainsboro;
+        }
+
+        #main_top {
+            text-align: center;
+            color: white;
+            margin-top: 150px;
+        }
+
+        section {
+            width: 95%;
+            margin: 50px auto;
+            left: 20px;
+        }
+
+        .m2 {
+            float: right;
+            cursor: pointer;
+        }
+
+        header div {
+            color: white;
+            float: right;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--主体-->
+<div id="main" class="layui-main">
+    <header>
+    </header>
+    <div id="main_top">
+        <span style="font-size: 50px">请 选 择 取 款 金 额</span>
+        <h3>please select next step</h3>
+    </div>
+    <section>
+        <a th:href="@{~/password/payee(money=200)}"> <img width="28%" th:src="@{/images/200.png}" src="../static/images/200.png"></a>
+        <a th:href="@{~/password/payee(money=300)}"> <img width="28%" class="m2" style="" th:src="@{/images/300.png}"
+                                           src="../static/images/300.png"></a>
+    </section>
+    <section>
+        <a th:href="@{~/password/payee(money=500)}"> <img style="" width="28%" th:src="@{/images/500.png}" src="../static/images/500.png"></a>
+        <a th:href="@{~/password/payee(money=800)}"> <img class="m2" width="28%" style="" th:src="@{/images/800.png}" src="../static/images/800.png"></a>
+    </section>
+    <section>
+        <a th:href="@{~/index}"> <img width="28%" th:src="@{/images/return.png}" src="../static/images/return.png"></a>
+        <a th:href="@{~/otherMoney}"><img class="m2" width="28%" style="" th:src="@{/images/qitamiane.png}"
+                                          src="../static/images/qitamiane.png"></a>
+    </section>
+</div>
+
+<script th:src="@{/lib/jquery/jquery.min.js}" src="../static/lib/jquery/jquery.min.js"></script>
+<script th:src="@{/lib/layui/layui.js}" src="../static/lib/layui/layui.js"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.js}" src="../static/lib/bootstrap/js/bootstrap.js"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/lib/layui/css/layui.css" th:href="@{/lib/layui/css/layui.css}">
+    <link href="../static/lib/bootstrap/css/bootstrap.css" th:href="@{/lib/bootstrap/css/bootstrap.css}"
+          rel="stylesheet">
+   <style>
+       #main {
+           background-size: cover;
+           margin-top: 5px;
+           background:url(../static/images/timg.jpg);
+           background-size: cover;
+           border-radius: 10px;
+           /*  border-radius: 15px;*/
+           height: 750px;
+           border: 1px solid grey;
+           box-shadow: 5px 5px 5px gainsboro;
+       }
+       #main>div{
+           text-align: center;
+           color: white;
+           margin-top: 180px;
+       }
+   </style>
+</head>
+<body>
+<!--主体-->
+<div id="main" class="layui-main">
+    <div th:if="${#session.getAttribute('loginUser') != null}">
+        <h1>正在出钞，请稍等....</h1>
+        <h3>Reading card data,please wait....</h3>
+    </div>
+</div>
+<form id="myform" th:action="@{~/printed}"></form>
+<script src="../static/lib/jquery/jquery.min.js" th:src="@{/lib/jquery/jquery.min.js}"></script>
+<script th:src="@{/lib/layui/layui.js}"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.js}"></script>
+<script>
+    window.setTimeout("$('#myform').submit()", 2000);
+</script>
+</body>
+</html>

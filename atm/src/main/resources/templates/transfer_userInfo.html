@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>转账用户信息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/lib/layui/css/layui.css" th:href="@{/lib/layui/css/layui.css}">
+    <link href="../static/lib/bootstrap/css/bootstrap.css" th:href="@{/lib/bootstrap/css/bootstrap.css}"
+          rel="stylesheet">
+    <style>
+        #main {
+            background-size: cover;
+            margin-top: 5px;
+            background: url(../static/images/timg.jpg);
+            background-size: cover;
+            border-radius: 10px;
+            /*  border-radius: 15px;*/
+            height: 750px;
+            overflow: hidden;
+            border: 1px solid grey;
+            box-shadow: 5px 5px 5px gainsboro;
+        }
+
+        #main_top {
+            text-align: center;
+            color: white;
+            margin-top: 150px;
+        }
+
+        section {
+            width: 95%;
+            margin: 50px auto;
+            left: 20px;
+        }
+
+        header div {
+            color: white;
+            float: right;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+        .layui-table tbody tr:hover {
+            background:none;
+        }
+        .layui-table {
+            width: 100%;
+            color: black;
+        }
+        footer {
+            width: 95%;
+            margin: 240px auto;
+            left: 20px;
+        }
+
+        #m2 {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--主体-->
+<div id="main" class="layui-main">
+    <div id="main_top">
+        <h1>转 账 信 息</h1>
+        <table class="layui-table" style="width: 50%; margin: 70px auto; box-shadow:5px 3px 3px darkgrey;">
+            <tbody>
+            <tr>
+                <td>收 款 人：</td>
+                <td th:text="${#request.getAttribute('username')}"></td>
+            </tr>
+            <tr>
+                <td>卡 号:</td>
+                <td th:text="${#session.getAttribute('transCardId')}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+       <a th:href="@{~/transgerMoney(cardId=${#request.getAttribute('cardId')})}"><img id="continue" width="29%" src="../static/images/continue.png" th:src="@{/images/continue.png}"></a>
+       <a th:href="@{~/index}"> <img id="m2" width="29%" src="../static/images/return.png" th:src="@{/images/return.png}"></a>
+    </footer>
+</div>
+<script th:src="@{/lib/jquery/jquery.min.js}" src="../static/lib/jquery/jquery.min.js"></script>
+<script th:src="@{/lib/layui/layui.js}" src="../static/lib/layui/layui.js"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.js}" src="../static/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

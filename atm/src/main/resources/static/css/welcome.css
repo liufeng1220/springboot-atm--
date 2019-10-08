@@ -1,0 +1,91 @@
+#main {
+    background-size: cover;
+    margin-top: 5px;
+    background:url(../images/timg.jpg);
+    background-size: cover;
+    border-radius: 10px;
+    /*  border-radius: 15px;*/
+    height: 750px;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px gainsboro;
+}
+section{
+    margin-top: 70px;
+    width: 100%;
+    height: 590px;
+}
+#main_left{
+    width: 45%;
+    float: left;
+    cursor: pointer;
+}
+
+ul{
+    border-right:1px solid  white;
+}
+ul li{
+    padding: 20px 110px;
+}
+#main_right{
+    width: 55%;
+
+    float: right;
+}
+
+#right_top img{
+
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+#right_top{
+    width: 100%;
+    height: 90px;
+}
+
+#right_1{
+    width: 60%;
+
+    float: left;
+    height: 400px;
+}
+#right_1 p{
+    margin-top: 120px;
+}
+#right_2{
+    width: 40%;
+    float: right;
+    margin-top: -42px;
+    height: 400px;
+    padding: 50px 0px;
+    overflow: hidden;
+}
+#right_2 img{
+    cursor: pointer;
+    animation-name:liufeng;
+    animation-duration:1s;
+    animation-direction:alternate;
+    animation-iteration-count:infinite;
+}
+@keyframes liufeng{
+    from{
+        margin-top:0px;}
+    to{
+        margin-top:-100px;}
+}
+#right_footer{
+
+    float: left;
+    width: 100%;
+
+}
+#right_footer img{
+    margin-left: 50px;
+
+}
+footer{
+    margin-top: 28px;
+    margin-left: 40px;
+
+
+}

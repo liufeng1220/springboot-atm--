@@ -1,0 +1,27 @@
+server:
+  port: 80
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/atm?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    cache: false #是否开启缓存
+    mode: HTML5
+    encoding: utf-8
+#日志信息，debug为开发阶段，inf为使用阶段，使用debug打印输出信息
+logging:
+  level:
+    co.fengfeng: info
+  path: "D:/atm"  #为日志输出路径
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml #配置映射文件路径
+  type-aliases-package: com.fengfeng.domain #配置包别名，后面删的.*，不知道
+#  configuration:
+#    map-underscore-to-camel-case: true  #驼峰命名
+

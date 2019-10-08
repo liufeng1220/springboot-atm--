@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>业务选择</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/lib/layui/css/layui.css" th:href="@{/lib/layui/css/layui.css}">
+    <link href="../static/lib/bootstrap/css/bootstrap.css" th:href="@{/lib/bootstrap/css/bootstrap.css}"
+          rel="stylesheet">
+    <style>
+        #main {
+            background-size: cover;
+            margin-top: 5px;
+            background: url(../static/images/timg.jpg);
+            background-size: cover;
+            border-radius: 10px;
+            /*  border-radius: 15px;*/
+            height: 750px;
+            overflow: hidden;
+            border: 1px solid grey;
+            box-shadow: 5px 5px 5px gainsboro;
+        }
+
+        #main_top {
+            text-align: center;
+            color: white;
+            margin-top: 150px;
+        }
+
+        section {
+            width: 95%;
+            margin: 50px auto;
+            left: 20px;
+        }
+
+        .m2 {
+            float: right;
+            cursor: pointer;
+        }
+
+        header div {
+            color: white;
+            float: right;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--主体-->
+<div id="main" class="layui-main">
+    <header>
+        <div>
+            <h1 th:text="${session.loginUser.customerName}">李四</h1>
+            <h4>good affernoon,mr zhang</h4>
+        </div>
+    </header>
+    <div id="main_top">
+        <span style="font-size: 50px">请 选 择 业 务</span>
+        <h3>please select next step</h3>
+    </div>
+    <section>
+        <a th:href="@{~/withdrawal}"> <img  style="" th:src="@{/images/qukuang.png}"
+                                            src="../static/images/qukuang.png"></a>
+        <a th:href="@{~/checkMoney}"> <img class="m2" style="" th:src="@{/images/check.png}"
+                                           src="../static/images/check.png"></a>
+    </section>
+    <section>
+        <a th:href="@{~/transferAccount}"> <img style="" th:src="@{/images/zhuanzhang.png}"
+                                                src="../static/images/zhuanzhang.png"></a>
+        <a th:href="@{~/saveMoney}"> <img class="m2" style="" th:src="@{/images/repository.png}"
+                                          src="../static/images/repository.png"></a>
+    </section>
+    <section>
+        <a th:href="@{~/exit}"><img th:src="@{/images/exit.png}" src="../static/images/exit.png"></a>
+        <a th:href="@{~/password/editPassword}"> <img class="m2" th:src="@{/images/changepassword.png}"
+                                                      src="../static/images/changepassword.png"></a>
+
+    </section>
+</div>
+<script th:src="@{/lib/layui/layui.js}" src="../static/lib/layui/layui.js"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.js}" src="../static/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
