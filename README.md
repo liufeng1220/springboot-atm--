@@ -1,7 +1,10 @@
 # springboot_atm 
 #### java8+mysql5.7.26 
 >> 一个基于springboot开发的银行atm取款机项目（在校期间），使用mybatis,spring,thymleaf模板引擎技术
-- - -
+>> 数据库sql在src_main_resource目录下.txt
+>> 注意修改mysql配置文件中的账号密码
+
+### 功能介绍- - -
 * 1、点击插卡
 * 2、手动输入账号，密码登陆
 * 3、查询
